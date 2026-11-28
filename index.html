@@ -1,656 +1,714 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ricardo Gomez — Desarrollador Web</title>
-<meta name="description" content="Portafolio de Ricardo Gomez, desarrollador/a web." />
+
+<!-- ============================================================
+     SEO BÁSICO
+     IMPORTANTE: si tu URL de GitHub Pages es distinta a
+     https://ricardogomez19.github.io/ reemplázala en TODAS las
+     líneas que la mencionan (canonical, og:url, og:image,
+     twitter:image, JSON-LD) y en sitemap.xml / robots.txt.
+     ============================================================ -->
+<title>Ricardo Gomez | Desarrollador Web Full Stack — Laravel, PHP, Node.js y JavaScript</title>
+<meta name="description" content="Ricardo Gomez, Ingeniero en Desarrollo y Gestión de Software. Desarrollador web full stack: sitios web, tiendas en línea y sistemas de gestión con Laravel, PHP, Node.js y JavaScript. Disponible para nuevas oportunidades." />
+<meta name="author" content="Ricardo Gomez" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://ricardogomez19.github.io/portafolio/" />
+<meta name="theme-color" content="#0a192f" />
+
+<!-- Open Graph / redes sociales / LinkedIn / WhatsApp -->
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_MX" />
+<meta property="og:site_name" content="Ricardo Gomez — Portafolio" />
+<meta property="og:title" content="Ricardo Gomez | Desarrollador Web Full Stack" />
+<meta property="og:description" content="Sitios web, tiendas en línea y sistemas de gestión con Laravel, PHP, Node.js y JavaScript. Mira mis proyectos." />
+<meta property="og:url" content="https://ricardogomez19.github.io/portafolio/" />
+<meta property="og:image" content="https://ricardogomez19.github.io/portafolio/images/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Ricardo Gomez — Desarrollador Web Full Stack" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Ricardo Gomez | Desarrollador Web Full Stack" />
+<meta name="twitter:description" content="Sitios web, tiendas en línea y sistemas de gestión con Laravel, PHP, Node.js y JavaScript." />
+<meta name="twitter:image" content="https://ricardogomez19.github.io/portafolio/images/og-image.png" />
+
+<!-- Favicon (SVG embebido, sin archivos extra) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230a192f'/%3E%3Crect x='4' y='4' width='92' height='92' rx='19' fill='none' stroke='%2364ffda' stroke-width='5'/%3E%3Ctext x='50' y='66' font-family='monospace' font-size='46' font-weight='700' text-anchor='middle' fill='%2364ffda'%3ERG%3C/text%3E%3C/svg%3E" />
+
+<!-- Datos estructurados para Google (Person + WebSite) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://ricardogomez19.github.io/portafolio/#website",
+      "url": "https://ricardogomez19.github.io/portafolio/",
+      "name": "Ricardo Gomez — Portafolio",
+      "inLanguage": "es-MX"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://ricardogomez19.github.io/portafolio/#person",
+      "name": "Ricardo Gomez",
+      "url": "https://ricardogomez19.github.io/portafolio/",
+      "image": "https://ricardogomez19.github.io/portafolio/images/foto.jpeg",
+      "jobTitle": "Desarrollador Web Full Stack",
+      "description": "Ingeniero en Desarrollo y Gestión de Software. Desarrollo sitios web, tiendas en línea y sistemas de gestión.",
+      "knowsAbout": ["JavaScript", "PHP", "Laravel", "Node.js", "Python", "HTML", "CSS", "SQLite", "Desarrollo web", "Accesibilidad web"],
+      "sameAs": [
+        "https://github.com/RicardoGomez19"
+      ]
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script>document.documentElement.classList.add('js');</script>
+
 <style>
   :root{
-    --bg: #0a192f;
-    --bg-light: #112240;
-    --text-heading: #ccd6f6;
-    --text-body: #8892b0;
-    --accent: #64ffda;
-    --border: rgba(100,255,218,0.35);
-    --max-width: 900px;
-    --font-heading: 'Space Grotesk', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
+    --bg:#0a192f;
+    --bg-light:#112240;
+    --bg-lighter:#172a45;
+    --text-heading:#ccd6f6;
+    --text-body:#8892b0;
+    --accent:#64ffda;
+    --accent-soft:rgba(100,255,218,0.1);
+    --border:rgba(100,255,218,0.35);
+    --font-heading:'Space Grotesk', system-ui, sans-serif;
+    --font-mono:'JetBrains Mono', ui-monospace, monospace;
+    --header-h:78px;
   }
 
   *{ box-sizing:border-box; }
-
-  html{ scroll-behavior:smooth; }
+  html{ scroll-behavior:smooth; scroll-padding-top:var(--header-h); }
 
   body{
     margin:0;
     background:var(--bg);
     color:var(--text-body);
     font-family:var(--font-heading);
-    line-height:1.6;
+    line-height:1.65;
     -webkit-font-smoothing:antialiased;
   }
 
   a{ color:inherit; text-decoration:none; }
-
-  img{
-  max-width:100%;
-  height:auto;
-  display:block;
-  }
-
+  img{ max-width:100%; height:auto; display:block; }
   ::selection{ background:var(--accent); color:var(--bg); }
 
-  /* Focus visible para accesibilidad */
   a:focus-visible, button:focus-visible{
     outline:2px solid var(--accent);
     outline-offset:3px;
   }
 
-  .wrap{
-    max-width:1100px;
-    margin:0 auto;
-    padding:0 50px;
+  .sr-only{
+    position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+    overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
   }
 
-  @media (max-width:700px){
-    .wrap{ padding:0 25px; }
+  .skip-link{
+    position:absolute; left:16px; top:-60px;
+    background:var(--accent); color:var(--bg);
+    padding:10px 16px; border-radius:4px;
+    font-family:var(--font-mono); font-size:.85rem; z-index:300;
+    transition:top .2s ease;
   }
+  .skip-link:focus{ top:12px; }
+
+  .wrap{ max-width:1100px; margin:0 auto; padding:0 50px; }
+  @media (max-width:700px){ .wrap{ padding:0 22px; } }
 
   /* ===== Header ===== */
   header{
-    position:fixed;
-    top:0; left:0; right:0;
-    z-index:100;
-    background:rgba(10,25,47,0.85);
-    backdrop-filter:blur(8px);
+    position:fixed; top:0; left:0; right:0; z-index:100;
     border-bottom:1px solid rgba(100,255,218,0.08);
+  }
+  /* El blur va en un pseudo-elemento para no romper el menú móvil (position:fixed) */
+  header::before{
+    content:''; position:absolute; inset:0; z-index:-1;
+    background:rgba(10,25,47,0.85);
+    -webkit-backdrop-filter:blur(8px);
+    backdrop-filter:blur(8px);
   }
 
   .nav{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:18px 50px;
-    max-width:1100px;
-    margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 50px; max-width:1100px; margin:0 auto;
   }
-
-  @media (max-width:700px){
-    .nav{ padding:16px 25px; }
-  }
+  @media (max-width:700px){ .nav{ padding:16px 22px; } }
 
   .logo{
     width:42px; height:42px;
-    border:1px solid var(--accent);
-    border-radius:10px;
+    border:1px solid var(--accent); border-radius:10px;
     display:flex; align-items:center; justify-content:center;
-    color:var(--accent);
-    font-family:var(--font-mono);
-    font-weight:600;
-    font-size:1.1rem;
+    color:var(--accent); font-family:var(--font-mono);
+    font-weight:600; font-size:1.1rem;
+    transition:background .2s ease;
   }
+  .logo:hover{ background:var(--accent-soft); }
 
   .nav-links{
-    display:flex;
-    align-items:center;
-    gap:28px;
-    list-style:none;
-    margin:0; padding:0;
+    display:flex; align-items:center; gap:18px;
+    list-style:none; margin:0; padding:0;
   }
 
   .nav-links li a{
-    font-family:var(--font-mono);
-    font-size:0.85rem;
+    font-family:var(--font-mono); font-size:.85rem;
     color:var(--text-heading);
     transition:color .2s ease;
-    padding:8px 12px;
-    border-radius:4px;
-    display:inline-block;
+    padding:8px 12px; border-radius:4px; display:inline-block;
   }
-
-  .nav-links li a:hover{ color:var(--accent); }
-
+  .nav-links li a:hover,
+  .nav-links li a.active{ color:var(--accent); }
   .nav-links .num{ color:var(--accent); margin-right:4px; }
 
-  .resume-btn{
-    font-family:var(--font-mono);
-    font-size:0.8rem;
-    padding:10px 16px;
-    border:1px solid var(--accent);
-    border-radius:4px;
-    color:var(--accent);
-    transition:background .2s ease;
+  .nav-links li a.resume-btn{
+    font-size:.8rem; padding:10px 16px;
+    border:1px solid var(--accent); border-radius:4px;
+    color:var(--accent); transition:background .2s ease;
   }
+  .nav-links li a.resume-btn:hover{ background:var(--accent-soft); }
 
-  .resume-btn:hover{ background:rgba(100,255,218,0.1); }
-
-  .menu-toggle{
-    display:none;
-    background:none;
-    border:none;
-    color:var(--accent);
-    font-size:1.6rem;
-    cursor:pointer;
-    padding:6px 10px;
-    border-radius:4px;
-    line-height:1;
-  }
-
+ 
   body.no-scroll{ overflow:hidden; }
 
-  @media (max-width:750px){
-    .nav-links{
-      position:fixed;
-      top:0;
-      right:0;
-      height:100vh;
-      width:min(75vw, 300px);
-      margin:0;
-      padding:100px 40px 40px;
-      background:var(--bg-light);
-      flex-direction:column;
-      align-items:flex-start;
-      justify-content:flex-start;
-      gap:26px;
-      box-shadow:-12px 0 30px rgba(0,0,0,0.45);
-      transform:translateX(100%);
-      transition:transform .35s ease;
-      z-index:150;
-    }
+  /* ===== Botón hamburguesa animado ===== */
+.menu-toggle{
+  display:none; position:relative; z-index:220;
+  width:44px; height:44px; padding:0; cursor:pointer;
+  background:var(--accent-soft);
+  border:1px solid rgba(100,255,218,.35); border-radius:10px;
+}
+.menu-toggle span{
+  position:absolute; left:11px; right:11px; height:2px;
+  background:var(--accent); border-radius:2px;
+  transition:transform .3s ease, opacity .2s ease, top .3s ease;
+}
+.menu-toggle span:nth-child(1){ top:14px; }
+.menu-toggle span:nth-child(2){ top:21px; }
+.menu-toggle span:nth-child(3){ top:28px; }
+.menu-toggle[aria-expanded="true"] span:nth-child(1){ top:21px; transform:rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+.menu-toggle[aria-expanded="true"] span:nth-child(3){ top:21px; transform:rotate(-45deg); }
 
-    .nav-links.open{ transform:translateX(0); }
+.nav-backdrop{ display:none; }
 
-    .nav-links li{ width:100%; }
+/* ===== Menú móvil ===== */
+@media (max-width:850px){
+  .menu-toggle{ display:block; }
 
-    .nav-links li a{
-      display:block;
-      font-size:1rem;
-    }
-
-    .resume-btn{ margin-top:10px; }
-
-    .menu-toggle{
-      display:block;
-      position:relative;
-      z-index:220;
-    }
+  .nav-backdrop{
+    display:block; position:fixed; inset:0; z-index:140;
+    background:rgba(2,12,27,.72);
+    -webkit-backdrop-filter:blur(5px); backdrop-filter:blur(5px);
+    opacity:0; visibility:hidden;
+    transition:opacity .3s ease, visibility 0s linear .3s;
+  }
+  .nav-backdrop.show{
+    opacity:1; visibility:visible;
+    transition:opacity .3s ease, visibility 0s;
   }
 
-  /* ===== Secciones generales ===== */
-  section{
-    padding:clamp(64px, 9vw, 120px) 0;
-    max-width:1100px;
-    margin:0 auto;
+  .nav-links{
+    position:fixed; top:0; right:0;
+    height:100vh; height:100dvh;
+    width:min(86vw, 360px);
+    margin:0; padding:96px 28px 32px;
+    background:linear-gradient(180deg, var(--bg-light), var(--bg));
+    border-left:1px solid rgba(100,255,218,.15);
+    box-shadow:-20px 0 50px rgba(0,0,0,.5);
+    flex-direction:column; align-items:stretch; justify-content:flex-start; gap:0;
+    overflow-y:auto; z-index:150;
+    transform:translateX(100%); visibility:hidden;
+    transition:transform .4s cubic-bezier(.22,1,.36,1), visibility 0s linear .4s;
+  }
+  .nav-links.open{
+    transform:none; visibility:visible;
+    transition:transform .4s cubic-bezier(.22,1,.36,1), visibility 0s;
   }
 
-  section h2{
-    display:flex;
-    align-items:center;
-    gap:16px;
-    font-size:1.6rem;
-    color:var(--text-heading);
-    white-space:nowrap;
-  }
-
-  section h2::after{
-    content:'';
-    display:block;
-    height:1px;
+  .nav-links li{
     width:100%;
-    background:rgba(136,146,176,0.3);
+    border-bottom:1px solid rgba(136,146,176,.15);
+    opacity:0; transform:translateX(24px);
+    transition:opacity .3s ease, transform .3s ease;
+  }
+  .nav-links.open li{
+    opacity:1; transform:none;
+    transition:opacity .4s ease calc(var(--i) * .06s + .12s),
+               transform .4s ease calc(var(--i) * .06s + .12s);
+  }
+  .nav-links li:nth-child(1){ --i:1; }
+  .nav-links li:nth-child(2){ --i:2; }
+  .nav-links li:nth-child(3){ --i:3; }
+  .nav-links li:nth-child(4){ --i:4; }
+  .nav-links li:nth-child(5){ --i:5; }
+
+  .nav-links li a{
+    display:flex; align-items:center; gap:12px;
+    padding:18px 4px; font-size:1.1rem; border-radius:0;
+  }
+  .nav-links li a:not(.resume-btn)::before{ display:none; }  /* sin línea giratoria en el menú */
+  .nav-links .num{ font-size:.85rem; margin:0; }
+  .nav-links li a.active{ padding-left:14px; box-shadow:inset 3px 0 0 var(--accent); }
+
+  .nav-links li:last-child{ border-bottom:none; margin-top:auto; padding-top:28px; }
+  .nav-links li a.resume-btn{ justify-content:center; padding:14px; font-size:.95rem; }
+}
+
+  /* ===== Secciones ===== */
+  main > .wrap > section{
+    padding:clamp(60px, 9vw, 110px) 0;
+  }
+
+  .section-title{
+    display:flex; align-items:center; gap:16px;
+    font-size:clamp(1.4rem, 3vw, 1.7rem);
+    color:var(--text-heading);
+    white-space:nowrap; margin:0;
+  }
+  .section-title .num{
+    font-family:var(--font-mono); color:var(--accent);
+    font-size:.9em; font-weight:400;
+  }
+  .section-title::after{
+    content:''; display:block; height:1px; width:100%;
+    background:rgba(136,146,176,.3);
   }
 
   /* ===== Hero ===== */
   .hero{
-    min-height:min(88vh, 640px);
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    padding:clamp(110px, 18vh, 160px) 0 clamp(50px, 8vh, 80px);
+    min-height:min(92vh, 700px);
+    display:flex; flex-direction:column; justify-content:center;
+    padding:clamp(120px, 18vh, 170px) 0 clamp(50px, 8vh, 80px) !important;
+    position:relative;
+  }
+  .hero::before{
+    content:''; position:absolute; z-index:-1;
+    top:8%; right:-12%; width:min(560px, 80vw); aspect-ratio:1;
+    background:radial-gradient(circle, rgba(100,255,218,.10), transparent 65%);
+    pointer-events:none;
   }
 
-  .hero p.pretitle{
-    font-family:var(--font-mono);
+  .status{
+    display:inline-flex; align-items:center; gap:10px;
+    width:fit-content;
+    font-family:var(--font-mono); font-size:.78rem;
     color:var(--accent);
-    font-size:1rem;
-    margin:0 0 20px;
+    background:var(--accent-soft);
+    border:1px solid var(--border);
+    border-radius:999px; padding:6px 14px; margin:0 0 28px;
+  }
+  .status::before{
+    content:''; width:8px; height:8px; border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 0 0 rgba(100,255,218,.6);
+    animation:pulse 2s infinite;
+  }
+  @keyframes pulse{
+    70%{ box-shadow:0 0 0 9px rgba(100,255,218,0); }
+    100%{ box-shadow:0 0 0 0 rgba(100,255,218,0); }
+  }
+
+  .pretitle{
+    font-family:var(--font-mono); color:var(--accent);
+    font-size:1rem; margin:0 0 16px;
   }
 
   .hero h1{
-    font-size:clamp(2.2rem, 7vw, 4.5rem);
+    font-size:clamp(2.4rem, 8vw, 4.8rem);
     color:var(--text-heading);
-    margin:0;
-    line-height:1.1;
+    margin:0; line-height:1.08; min-height:1.1em;
   }
 
-  .hero h2.subtitle{
-    font-size:clamp(1.8rem, 6vw, 3.6rem);
+  .hero .tagline{
+    font-size:clamp(1.5rem, 5vw, 3rem);
     color:var(--text-body);
-    margin:8px 0 0;
-    line-height:1.1;
+    margin:8px 0 0; line-height:1.15; font-weight:600;
   }
 
-  .hero .desc{
-    max-width:540px;
-    margin-top:28px;
-    font-size:1.05rem;
+  .hero .role{
+    font-family:var(--font-mono);
+    color:var(--accent);
+    font-size:clamp(.85rem, 2.4vw, 1rem);
+    margin:22px 0 0;
   }
 
+  .hero .desc{ max-width:560px; margin-top:20px; font-size:1.05rem; }
   .hero .desc strong{ color:var(--text-heading); font-weight:600; }
 
+  .hero-actions{ display:flex; flex-wrap:wrap; gap:16px; margin-top:40px; }
+
   .cta{
-    display:inline-block;
-    margin-top:44px;
-    padding:16px 28px;
-    border:1px solid var(--accent);
-    border-radius:4px;
-    color:var(--accent);
-    font-family:var(--font-mono);
-    font-size:0.9rem;
+    display:inline-block; padding:16px 28px;
+    border:1px solid var(--accent); border-radius:4px;
+    color:var(--accent); font-family:var(--font-mono); font-size:.9rem;
     width:fit-content;
-    transition:background .2s ease, transform .2s ease;
+    transition:background .2s ease, color .2s ease;
   }
+  .cta:hover{ background:var(--accent-soft); }
+  .cta.primary{ background:var(--accent); color:var(--bg); font-weight:500; }
+  .cta.primary:hover{ background:#8affe6; }
 
-  .cta:hover{ background:rgba(100,255,218,0.1); }
+  .cursor{
+    color:var(--accent); font-weight:400; margin-left:2px;
+    animation:blink .9s step-end infinite;
+  }
+  @keyframes blink{ 50%{ opacity:0; } }
 
-  /* ===== About ===== */
+  /* ===== Sobre mí ===== */
   .about-grid{
-    display:grid;
-    grid-template-columns:3fr 2fr;
-    gap:50px;
-    margin-top:40px;
-    align-items:start;
+    display:grid; grid-template-columns:3fr 2fr; gap:50px;
+    margin-top:40px; align-items:start;
   }
-
   .about-grid p{ margin:0 0 16px; }
-
   .about-grid strong{ color:var(--text-heading); font-weight:500; }
 
-  .skills-list{
-    list-style:none;
-    padding:0; margin:20px 0 0;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px 20px;
+  .skill-groups{
+    display:grid; grid-template-columns:1fr 1fr; gap:22px 24px; margin-top:22px;
   }
-
+  .skill-group h3{
+    font-family:var(--font-mono); font-size:.78rem; font-weight:500;
+    color:var(--accent); margin:0 0 8px; letter-spacing:.04em; text-transform:uppercase;
+  }
+  .skills-list{ list-style:none; padding:0; margin:0; display:grid; gap:6px; }
   .skills-list li{
-    font-family:var(--font-mono);
-    font-size:0.9rem;
-    color:var(--text-body);
-    position:relative;
-    padding-left:20px;
+    font-family:var(--font-mono); font-size:.88rem;
+    position:relative; padding-left:20px;
   }
+  .skills-list li::before{ content:'▹'; position:absolute; left:0; color:var(--accent); }
 
-  .skills-list li::before{
-    content:'▹';
-    position:absolute;
-    left:0;
-    color:var(--accent);
-  }
-
-  .avatar{
-    position:relative;
-    width:100%;
-    max-width:260px;
-    justify-self:center;
-  }
+  .avatar{ position:relative; width:100%; max-width:280px; justify-self:center; }
 
   .avatar .frame{
     aspect-ratio:1/1;
     border:2px solid var(--accent);
+    border-radius:10px;
+    padding:8px;                      /* espacio entre el borde y la foto */
+    background:var(--bg);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-mono); font-size:3rem; color:var(--accent);
+    transition:box-shadow .25s ease;
+  }
+  .avatar:hover .frame{ box-shadow:0 0 0 4px var(--accent-soft); }
+
+  .avatar img{
+    width:100%; height:100%;
+    object-fit:cover;
+    object-position:center top;       /* si tu foto es retrato, mantiene la cara visible */
     border-radius:6px;
-    position:relative;
-    background:linear-gradient(160deg, rgba(100,255,218,0.15), rgba(100,255,218,0));
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-family:var(--font-mono);
-    color:var(--accent);
-    font-size:0.85rem;
-    text-align:center;
-    padding:20px;
   }
 
-  @media (max-width:750px){
+  @media (max-width:850px){
     .about-grid{ grid-template-columns:1fr; }
-    .avatar{ order:-1; max-width:180px; }
+    .avatar{ order:-1; max-width:200px; }
   }
 
-  /* ===== Experience ===== */
-  .exp-wrap{
-    display:flex;
-    gap:30px;
-    margin-top:40px;
+  @media (max-width:420px){ .skill-groups{ grid-template-columns:1fr; } }
+
+  .highlights{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:20px; margin-top:56px;
   }
+  .highlight{
+    background:var(--bg-light); border-radius:6px; padding:24px;
+    border:1px solid transparent; transition:border-color .25s ease, transform .25s ease;
+  }
+  .highlight:hover{ border-color:var(--border); transform:translateY(-4px); }
+  .highlight .ico{ color:var(--accent); font-size:1.5rem; margin-bottom:10px; display:block; }
+  .highlight h3{ color:var(--text-heading); font-size:1.05rem; margin:0 0 8px; }
+  .highlight p{ margin:0; font-size:.92rem; }
+
+  /* ===== Experiencia ===== */
+  .exp-wrap{ display:flex; gap:30px; margin-top:40px; }
 
   .exp-tabs{
-    display:flex;
-    flex-direction:column;
-    border-left:2px solid rgba(136,146,176,0.2);
-    min-width:170px;
+    display:flex; flex-direction:column;
+    border-left:2px solid rgba(136,146,176,.2);
+    min-width:170px; align-self:flex-start;
   }
-
   .exp-tabs button{
-    background:none;
-    border:none;
-    text-align:left;
-    font-family:var(--font-mono);
-    font-size:0.85rem;
-    color:var(--text-body);
-    padding:12px 20px;
-    cursor:pointer;
-    border-left:2px solid transparent;
-    margin-left:-2px;
+    background:none; border:none; text-align:left;
+    font-family:var(--font-mono); font-size:.85rem; color:var(--text-body);
+    padding:12px 20px; cursor:pointer;
+    border-left:2px solid transparent; margin-left:-2px;
     transition:color .2s ease, background .2s ease;
   }
-
   .exp-tabs button:hover{ background:var(--bg-light); color:var(--accent); }
-
   .exp-tabs button.active{
-    color:var(--accent);
-    border-left-color:var(--accent);
-    background:var(--bg-light);
+    color:var(--accent); border-left-color:var(--accent); background:var(--bg-light);
   }
 
   .exp-panel{ display:none; }
   .exp-panel.active{ display:block; }
 
-  .exp-panel h3{
-    color:var(--text-heading);
-    font-size:1.2rem;
-    margin:0 0 4px;
-    font-weight:600;
-  }
-
+  .exp-panel h3{ color:var(--text-heading); font-size:1.2rem; margin:0 0 4px; font-weight:600; }
   .exp-panel h3 span{ color:var(--accent); }
-
   .exp-panel .date{
-    font-family:var(--font-mono);
-    font-size:0.8rem;
-    color:var(--text-body);
-    margin-bottom:18px;
-    display:block;
+    font-family:var(--font-mono); font-size:.8rem; color:var(--text-body);
+    margin-bottom:18px; display:block;
   }
-
-  .exp-panel ul{
-    list-style:none;
-    padding:0; margin:0;
-  }
-
-  .exp-panel li{
-    position:relative;
-    padding-left:24px;
-    margin-bottom:14px;
-  }
-
-  .exp-panel li::before{
-    content:'▹';
-    position:absolute;
-    left:0;
-    color:var(--accent);
-  }
+  .exp-panel ul{ list-style:none; padding:0; margin:0; }
+  .exp-panel li{ position:relative; padding-left:24px; margin-bottom:14px; }
+  .exp-panel li::before{ content:'▹'; position:absolute; left:0; color:var(--accent); }
 
   @media (max-width:700px){
     .exp-wrap{ flex-direction:column; }
     .exp-tabs{
-      flex-direction:row;
-      overflow-x:auto;
-      border-left:none;
-      border-bottom:2px solid rgba(136,146,176,0.2);
+      flex-direction:row; overflow-x:auto; border-left:none;
+      border-bottom:2px solid rgba(136,146,176,.2); width:100%;
     }
-    .exp-tabs button{
-      border-left:none;
-      border-bottom:2px solid transparent;
-      white-space:nowrap;
-    }
+    .exp-tabs button{ border-left:none; border-bottom:2px solid transparent; margin:0 0 -2px; white-space:nowrap; }
     .exp-tabs button.active{ border-left:none; border-bottom-color:var(--accent); }
   }
 
-  /* ===== Work ===== */
+  /* ===== Proyectos ===== */
   .projects{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-    gap:24px;
-    margin-top:40px;
+    display:grid; grid-template-columns:repeat(2, 1fr);
+    gap:20px; margin-top:40px;
   }
-
   .project-card{
-    background:var(--bg-light);
-    border-radius:6px;
-    padding:28px;
-    display:flex;
-    flex-direction:column;
-    transition:transform .25s ease;
+    background:var(--bg-light); border-radius:8px; overflow:hidden;
+    display:flex; flex-direction:column;
     border:1px solid transparent;
+    transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
   }
-
   .project-card:hover{
-    transform:translateY(-6px);
-    border-color:var(--border);
+    transform:translateY(-6px); border-color:var(--border);
+    box-shadow:0 18px 40px -20px rgba(2,12,27,.8);
   }
 
-  .project-card .top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:24px;
+  .project-card .thumb{
+    aspect-ratio:21/9; background:var(--bg-lighter); overflow:hidden;
+    border-bottom:1px solid rgba(100,255,218,.08);
   }
-
-  .folder-icon{ color:var(--accent); font-size:1.8rem; }
-
-  .project-links a{
-    color:var(--text-body);
-    margin-left:14px;
-    font-size:1.1rem;
-    transition:color .2s ease;
+  .project-card .thumb img{
+    width:100%; height:100%; object-fit:cover; object-position:top;
+    transition:transform .5s ease;
   }
+  .project-card:hover .thumb img{ transform:scale(1.04); }
 
-  .project-links a:hover{ color:var(--accent); }
+  .card-body{ padding:18px 20px 20px; display:flex; flex-direction:column; flex-grow:1; }
 
-  .project-card h3{
-    color:var(--text-heading);
-    font-size:1.15rem;
-    margin:0 0 12px;
-  }
-
-  .project-card p{
-    font-size:0.92rem;
-    flex-grow:1;
-    margin:0 0 20px;
-  }
+  .project-card h3{ color:var(--text-heading); font-size:1.2rem; margin:0 0 10px; }
+  .project-card p{ font-size:.92rem; flex-grow:1; margin:0 0 18px; }
+  @media (max-width:760px){ .projects{ grid-template-columns:1fr; } }
 
   .tech-list{
-    list-style:none;
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px 16px;
-    padding:0; margin:0;
-    font-family:var(--font-mono);
-    font-size:0.75rem;
-    color:var(--text-body);
+    list-style:none; display:flex; flex-wrap:wrap; gap:8px;
+    padding:0; margin:0 0 16px;
+  }
+  .tech-list li{
+    font-family:var(--font-mono); font-size:.72rem; color:var(--accent);
+    background:var(--accent-soft); border-radius:999px; padding:3px 10px;
   }
 
-  /* ===== Contact ===== */
-  .contact{ text-align:center; padding-bottom:clamp(50px, 8vw, 80px); }
-
-  .contact h2{ justify-content:center; }
-
-  .contact h2::after{ display:none; }
-
-  .contact p.pretitle{
-    font-family:var(--font-mono);
-    color:var(--accent);
-    font-size:1rem;
-    margin-bottom:14px;
+  .card-links{ display:flex; flex-wrap:wrap; gap:12px; margin-top:auto; }
+  .link-btn{
+    font-family:var(--font-mono); font-size:.8rem; color:var(--text-heading);
+    border:1px solid rgba(136,146,176,.35); border-radius:4px;
+    padding:6px 12px; transition:color .2s ease, border-color .2s ease, background .2s ease;
   }
+  .link-btn:hover{ color:var(--accent); border-color:var(--accent); background:var(--accent-soft); }
+  .link-btn.live{ color:var(--accent); border-color:var(--accent); }
 
-  .contact h2.title{
-    font-size:clamp(1.8rem, 6vw, 2.8rem);
-    color:var(--text-heading);
-    margin:0 0 20px;
+  /* ===== Contacto ===== */
+  .contact{ text-align:center; padding-bottom:clamp(50px, 8vw, 80px) !important; }
+  .contact .pretitle{ margin-bottom:14px; }
+  .contact h2{
+    font-size:clamp(1.9rem, 6vw, 3rem); color:var(--text-heading); margin:0 0 20px;
   }
+  .contact .desc{ max-width:520px; margin:0 auto 36px; }
+  .contact-actions{ display:flex; flex-wrap:wrap; gap:16px; justify-content:center; }
 
-  .contact p.desc{
-    max-width:480px;
-    margin:0 auto 40px;
-  }
-
-  .contact .cta{ margin:0 auto; }
-
+  /* ===== Footer ===== */
   footer{
-    text-align:center;
-    padding:24px 0 40px;
-    font-family:var(--font-mono);
-    font-size:0.78rem;
-    color:var(--text-body);
+    text-align:center; padding:24px 22px 40px;
+    font-family:var(--font-mono); font-size:.78rem; color:var(--text-body);
   }
-
+  footer p{ margin:0 0 6px; }
   footer a:hover{ color:var(--accent); }
 
-  /* ===== Efecto de línea giratoria (hover/focus en links y botones) ===== */
-  @property --angle{
-    syntax:'<angle>';
-    inherits:false;
-    initial-value:0deg;
-  }
+  /* ===== Línea giratoria en hover/focus ===== */
+  @property --angle{ syntax:'<angle>'; inherits:false; initial-value:0deg; }
 
-  .spin-border{
-    position:relative;
-  }
-
+  .spin-border{ position:relative; }
   .spin-border::before{
-    content:'';
-    position:absolute;
-    inset:-2px;
-    border-radius:inherit;
-    padding:2px;
+    content:''; position:absolute; inset:-2px; border-radius:inherit; padding:2px;
     background:conic-gradient(from var(--angle), transparent 0deg, transparent 250deg, var(--accent) 300deg, var(--accent) 340deg, transparent 360deg);
     -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite:xor;
-    mask-composite:exclude;
-    opacity:0;
-    pointer-events:none;
-    transition:opacity .25s ease;
+    -webkit-mask-composite:xor; mask-composite:exclude;
+    opacity:0; pointer-events:none; transition:opacity .25s ease;
   }
-
   .spin-border:hover::before,
-  .spin-border:focus-visible::before{
-    opacity:1;
-    animation:spin-rotate 1.6s linear infinite;
-  }
+  .spin-border:focus-visible::before{ opacity:1; animation:spin-rotate 1.6s linear infinite; }
+  @keyframes spin-rotate{ to{ --angle:360deg; } }
 
-  @keyframes spin-rotate{
-    to{ --angle:360deg; }
-  }
+  /* ===== Aparición al hacer scroll (solo si hay JS) ===== */
+  .js .reveal{ opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease; }
+  .js .reveal.visible{ opacity:1; transform:none; }
 
-  /* ===== Cursor del efecto de tecleo en el nombre ===== */
-  .cursor{
-    color:var(--accent);
-    font-weight:400;
-    margin-left:2px;
-    animation:blink 0.9s step-end infinite;
-  }
-
-  @keyframes blink{
-    50%{ opacity:0; }
-  }
-
-  /* Reduced motion */
+  /* ===== Movimiento reducido ===== */
   @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior:auto; }
     *{ transition:none !important; }
+    .js .reveal{ opacity:1; transform:none; }
     .spin-border:hover::before,
     .spin-border:focus-visible::before{ animation:none; opacity:1; }
-    .cursor{ animation:none; }
+    .cursor, .status::before{ animation:none; }
   }
 
+  /* ===== Impresión ===== */
+  @media print{
+    header, .hero-actions, .menu-toggle, .skip-link{ display:none !important; }
+    body{ background:#fff; color:#222; }
+    .project-card, .highlight{ border:1px solid #ccc; background:#fff; }
+    h1, h2, h3{ color:#000 !important; }
+  }
   
+  /* ===== acercamiento imagen ===== */
+  @media (hover:none){
+    .project-card.in-view .thumb img{ transform:scale(1.05); }
+    .project-card.in-view{ border-color:var(--border); }
+  }
 </style>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
 <header>
-  <nav class="nav">
-    <a href="#hero" class="logo" aria-label="Ir al inicio">RG</a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">☰</button>
+  <nav class="nav" aria-label="Navegación principal">
+    <div class="nav-backdrop" id="navBackdrop"></div>
+    <a href="#hero" class="logo" aria-label="Ricardo Gomez — ir al inicio">RG</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
     <ul class="nav-links" id="navLinks">
-      <li><a class="spin-border" href="#hero"><span class="num">00.</span>Inicio</a></li>
       <li><a class="spin-border" href="#about"><span class="num">01.</span>Sobre mí</a></li>
       <li><a class="spin-border" href="#experience"><span class="num">02.</span>Experiencia</a></li>
       <li><a class="spin-border" href="#work"><span class="num">03.</span>Proyectos</a></li>
       <li><a class="spin-border" href="#contact"><span class="num">04.</span>Contacto</a></li>
-      <li><a class="resume-btn spin-border" href="images/curriculum_Ricardo_Gomez.pdf" target="_blank" rel="noopener">Currículum</a></li>
+      <!-- TODO: sube tu CV a assets/CV-Ricardo-Gomez.pdf (o cambia esta ruta) -->
+      <li><a class="resume-btn spin-border" href="images/curriculum_Ricardo_Gomez.pdf" target="_blank" rel="noopener" download>Currículum</a></li>
     </ul>
   </nav>
 </header>
 
+<main id="main">
 <div class="wrap">
 
   <!-- HERO -->
-  <section class="hero" id="hero">
+  <section class="hero" id="hero" aria-labelledby="hero-title">
+    <p class="status">Disponible para nuevas oportunidades</p>
     <p class="pretitle">Hola, mi nombre es:</p>
-    <h1><span id="typedName"></span><span class="cursor" aria-hidden="true">|</span></h1>
-    <h3 class="subtitle">Ingeniero en desarrollo y gestión de software</h3>
+    <h1 id="hero-title">
+      <span class="sr-only">Ricardo Gomez</span>
+      <span id="typedName" aria-hidden="true">Ricardo Gomez</span><span class="cursor" aria-hidden="true">|</span>
+    </h1>
+    <p class="tagline">Construyo sitios web y sistemas que sí se usan.</p>
+    <p class="role">Ingeniero en Desarrollo y Gestión de Software · Desarrollador Web Full Stack</p>
     <p class="desc">
-      Desarrollador Web con visión de diseño. Creo experiencias digitales rápidas
-      y accesibles centradas en las personas para impulsar resultados de negocio.
+      Desarrollador web con visión de diseño. Creo <strong>experiencias digitales rápidas,
+      accesibles y centradas en las personas</strong> para impulsar resultados de negocio:
+      desde sitios y tiendas en línea hasta sistemas de gestión a la medida.
     </p>
-    <a href="#work" class="cta spin-border">Ver mis proyectos</a>
+    <div class="hero-actions">
+      <a href="#work" class="cta primary spin-border">Ver mis proyectos</a>
+      <a href="#contact" class="cta spin-border">Contáctame</a>
+    </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <h2>01. Sobre mí</h2>
-    <div class="about-grid">
+  <!-- SOBRE MÍ -->
+  <section id="about" aria-labelledby="about-title">
+    <h2 class="section-title reveal" id="about-title"><span class="num">01.</span> Sobre mí</h2>
+    <div class="about-grid reveal">
       <div>
         <p>
           ¡Hola! Soy Ricardo Gomez y me apasiona crear cosas que viven en internet.
-          Mi interés por el desarrollo web comenzó cuando probé editar HTML
-          por primera vez — resultó que descubrir cómo mover un botón enseña
-          más de lo que parece.
+          Mi interés por el desarrollo web comenzó cuando probé editar HTML por primera vez:
+          resultó que descubrir cómo mover un botón enseña más de lo que parece.
         </p>
         <p>
-          Avancemos unos años y he tenido el privilegio de trabajar en
-          algunas <strong>startups</strong> pero la mayoria de trabajos son <strong>proyectos propios</strong>. Mi principal objetivo hoy es
-          construir productos accesibles e inclusivos con buenas experiencias
-          de usuario.
+          Avancemos unos años: he tenido el privilegio de trabajar en algunas
+          <strong>startups</strong>, aunque la mayoría de mi trabajo han sido
+          <strong>proyectos propios</strong> de principio a fin. Mi objetivo hoy es construir
+          productos accesibles e inclusivos con buenas experiencias de usuario.
         </p>
-        <p>Estas son algunas tecnologías con las que he trabajado últimamente:</p>
-        <ul class="skills-list">
-          <li>JavaScript</li>
-          <li>Laravel</li>
-          <li>Node.js</li>
-          <li>Php</li>
-          <li>HTML &amp; CSS</li>
-          <li>Python</li>
-        </ul>
+        <p>Estas son algunas de las tecnologías con las que he trabajado últimamente:</p>
+        <div class="skill-groups">
+          <div class="skill-group">
+            <h3>Frontend</h3>
+            <ul class="skills-list">
+              <li>HTML &amp; CSS</li>
+              <li>JavaScript</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Backend</h3>
+            <ul class="skills-list">
+              <li>PHP</li>
+              <li>Laravel</li>
+              <li>Node.js</li>
+              <li>Python</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Datos</h3>
+            <ul class="skills-list">
+              <li>SQLite</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Herramientas</h3>
+            <ul class="skills-list">
+              <li>Git &amp; GitHub</li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="avatar">
-        <div class="frame"><br>
-          <img src="images/foto.jpeg" alt="Foto de Ricardo Gomez">
+        <div class="frame">
+          <img src="images/foto.jpeg" alt="Retrato de Ricardo Gomez, desarrollador web" width="400" height="400" loading="lazy" decoding="async"
+               onerror="this.remove(); this.parentNode.textContent='RG';">
         </div>
+      </div>
+    </div>
+
+    <div class="highlights reveal">
+      <div class="highlight">
+        <span class="ico" aria-hidden="true">🌐</span>
+        <h3>Sitios y tiendas en línea</h3>
+        <p>Páginas rápidas y responsivas, con catálogos y contacto directo por WhatsApp para convertir visitas en clientes.</p>
+      </div>
+      <div class="highlight">
+        <span class="ico" aria-hidden="true">⚙️</span>
+        <h3>Sistemas de gestión</h3>
+        <p>Control de asistencia y nómina, reservas y registro de huéspedes: procesos administrativos automatizados.</p>
+      </div>
+      <div class="highlight">
+        <span class="ico" aria-hidden="true">📶</span>
+        <h3>Software resiliente</h3>
+        <p>Aplicaciones con modo offline y sincronización automática para que el negocio nunca se detenga.</p>
       </div>
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <h2>02. Experiencia</h2>
-    <div class="exp-wrap">
-      <div class="exp-tabs" role="tablist" aria-label="Empresas">
-         <!--<button class="active" role="tab" aria-selected="true" data-tab="0">Empresa Uno</button>
-        <button role="tab" aria-selected="false" data-tab="1">Empresa Dos</button>-->
-        <button role="tab" aria-selected="false" data-tab="2">Freelance</button>
+  <!-- EXPERIENCIA -->
+  <section id="experience" aria-labelledby="exp-title">
+    <h2 class="section-title reveal" id="exp-title"><span class="num">02.</span> Experiencia</h2>
+    <div class="exp-wrap reveal">
+      <div class="exp-tabs" role="tablist" aria-label="Experiencia laboral">
+        <button class="active" role="tab" id="tab-2" aria-selected="true" aria-controls="panel-2" data-tab="2">Freelance</button>
       </div>
       <div class="exp-panels">
-        
-        <div class="exp-panel" data-panel="2">
-          <h3>Desarrollador Independiente</h3>
+        <div class="exp-panel active" role="tabpanel" id="panel-2" aria-labelledby="tab-2" data-panel="2" tabindex="0">
+          <h3>Desarrollador Independiente <span>· Freelance</span></h3>
           <span class="date">2022 — 2026</span>
           <ul>
             <li>Diseño y desarrollo de sitios web y tiendas en línea para pequeños negocios.</li>
@@ -661,168 +719,219 @@
     </div>
   </section>
 
-  <!-- WORK -->
-  <section id="work">
-    <h2>03. Algunos proyectos</h2>
+  <!-- PROYECTOS -->
+  <section id="work" aria-labelledby="work-title">
+    <h2 class="section-title reveal" id="work-title"><span class="num">03.</span> Algunos proyectos</h2>
     <div class="projects">
 
-
-      <article class="project-card">
-        <div class="top">
-          
-          <span class="project-links">
-            <img src="images/proyecto-paginaweb.png" alt="pagina web hotel">
-            <a href="https://github.com/RicardoGomez19/pagina-hotel-ejemplo" aria-label="Ver código en Github" target="_blank" rel="noopener">codigo Github↗</a>
-          </span>
+      <article class="project-card reveal">
+        <div class="thumb">
+          <img src="images/proyecto-paginaweb.png" alt="Captura de la página web de reservas para hotel" width="800" height="500" loading="lazy" decoding="async">
         </div>
-        <h3>Pagina web hotel</h3>
-        <p>Este proyecto consistió en el desarrollo de una página web para gestionar las reservas de un hotel, permitiendo registrar y consultar reservaciones de forma organizada. Lo desarrollé con HTML para la estructura, CSS para el diseño y JavaScript para la lógica e interactividad, lo que me permitió consolidar los fundamentos del desarrollo web y trabajar con formularios y validación de datos.</p>
-        <ul class="tech-list">
-          <li>HTML</li><li>CSS</li><li>JavaScript</li>
-        </ul>
+        <div class="card-body">
+          <h3>Página web de reservas para hotel</h3>
+          <p>Página web para gestionar las reservas de un hotel, que permite registrar y consultar reservaciones de forma organizada. Construida con HTML, CSS y JavaScript, trabajando formularios, validación de datos e interactividad.</p>
+          <ul class="tech-list" aria-label="Tecnologías">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li>
+          </ul>
+          <div class="card-links">
+            <a class="link-btn" href="https://github.com/RicardoGomez19/pagina-hotel-ejemplo" target="_blank" rel="noopener">Ver código ↗<span class="sr-only"> de la página web de reservas para hotel (GitHub)</span></a>
+          </div>
+        </div>
       </article>
 
-      <article class="project-card">
-        <div class="top">
-          
-          <span class="project-links">
-            <img src="images/proyecto-entradas.png" alt="entradas">
-            <a href="https://github.com/RicardoGomez19/ControlAsistencias.git" aria-label="Ver código en Github" target="_blank" rel="noopener">codigo Github↗</a>
-          </span>
+      <article class="project-card reveal">
+        <div class="thumb">
+          <img src="images/proyecto-entradas.png" alt="Captura del sistema de entradas y salidas del personal" width="800" height="500" loading="lazy" decoding="async">
         </div>
-        <h3>Sistema de entradas y salidas</h3>
-        <p>El sistema es una solución integral para la administración de personal y control de asistencia. Facilita el registro de jornadas laborales y 
-          automatiza el cálculo de nóminas según las horas trabajadas. Incluye herramientas ágiles para la gestión de la plantilla, asignación de salarios
-          por cargo y un completo historial de registros, garantizando trazabilidad, cumplimiento normativo y una drástica reducción en el tiempo dedicado
-          a tareas administrativas.</p>
-        <ul class="tech-list">
-          <li>Laravel</li><li>Php</li><li>JavaScript</li>
-        </ul>
+        <div class="card-body">
+          <h3>Sistema de entradas y salidas</h3>
+          <p>Solución integral para administrar personal y controlar la asistencia. Registra jornadas laborales y automatiza el cálculo de nóminas según las horas trabajadas, con gestión de plantilla, salarios por cargo y un historial completo que garantiza trazabilidad y reduce el tiempo en tareas administrativas.</p>
+          <ul class="tech-list" aria-label="Tecnologías">
+            <li>Laravel</li><li>PHP</li><li>JavaScript</li>
+          </ul>
+          <div class="card-links">
+            <a class="link-btn" href="https://github.com/RicardoGomez19/ControlAsistencias.git" target="_blank" rel="noopener">Ver código ↗<span class="sr-only"> del sistema de entradas y salidas (GitHub)</span></a>
+          </div>
+        </div>
       </article>
 
-      <article class="project-card">
-        <div class="top">
-          
-          <span class="project-links">
-            <img src="images/proyecto-registros.png" alt="registros">
-            <a href="https://github.com/RicardoGomez19/hotel-checkin-work.git" aria-label="Ver código en Github" target="_blank" rel="noopener">codigo Github↗</a>
-          </span>
+      <article class="project-card reveal">
+        <div class="thumb">
+          <img src="images/proyecto-registros.png" alt="Captura del sistema de registro de huéspedes" width="800" height="500" loading="lazy" decoding="async">
         </div>
-        <h3>Sistema de registro de huespedes</h3>
-        <p>El sistema optimiza la recepción y administración de huéspedes mediante un panel de control intuitivo que permite gestionar check-ins, 
-          extender estancias y administrar pagos o cargos extras con total agilidad. Diseñado para adaptarse a cualquier escenario, incluye un modo
-          de operación offline que asegura que el hotel pueda seguir trabajando sin interrupciones ante fallos de red, sincronizando los datos de 
-          forma automática y segura en cuanto se recupera la conexión.
-        </p>
-        <ul class="tech-list">
-          <li>JavaScript</li><li>Node.js</li><li>SQLite</li>
-        </ul>
+        <div class="card-body">
+          <h3>Sistema de registro de huéspedes</h3>
+          <p>Panel de control intuitivo para gestionar check-ins, extender estancias y administrar pagos o cargos extras. Incluye un modo offline que permite al hotel seguir operando ante fallos de red y sincroniza los datos de forma automática y segura al recuperar la conexión.</p>
+          <ul class="tech-list" aria-label="Tecnologías">
+            <li>JavaScript</li><li>Node.js</li><li>SQLite</li>
+          </ul>
+          <div class="card-links">
+            <a class="link-btn" href="https://github.com/RicardoGomez19/hotel-checkin-work.git" target="_blank" rel="noopener">Ver código ↗<span class="sr-only"> del sistema de registro de huéspedes (GitHub)</span></a>
+          </div>
+        </div>
       </article>
 
-      <article class="project-card">
-        <div class="top">
-          
-          <span class="project-links">
-            <img src="images/proyecto-catalogo.png" alt="catalogo">
-            <a href="https://tienda4bs.netlify.app/" aria-label="Ver proyecto en linea" target="_blank" rel="noopener">proyecto en linea↗</a>
-          </span>
+      <article class="project-card reveal">
+        <div class="thumb">
+          <img src="images/proyecto-catalogo.png" alt="Captura del catálogo en línea con contacto por WhatsApp" width="800" height="500" loading="lazy" decoding="async">
         </div>
-        <h3>Catalogo en linea</h3>
-        <p>Una solución de presencia digital que transforma su inventario en un catálogo en línea accesible 24/7. Los clientes pueden explorar
-          fotos y precios de sus productos con total claridad. Para agilizar el cierre de ventas, el sistema integra un canal de comunicación directo
-          vía WhatsApp, permitiendo que los interesados contacten a su equipo comercial instantáneamente sin intermediarios, optimizando así la tasa 
-          de conversión de visitantes a clientes.
-        </p>
-        <ul class="tech-list">
-          <li>HTML</li><li>CSS</li><li>JavaScript</li>
-        </ul>
+        <div class="card-body">
+          <h3>Catálogo en línea</h3>
+          <p>Presencia digital que transforma el inventario de un negocio en un catálogo accesible 24/7, con fotos y precios claros. Integra contacto directo por WhatsApp para que los interesados hablen con el equipo comercial al instante y se agilice el cierre de ventas.</p>
+          <ul class="tech-list" aria-label="Tecnologías">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li>
+          </ul>
+          <div class="card-links">
+            <a class="link-btn live" href="https://tienda4bs.netlify.app/" target="_blank" rel="noopener">Ver proyecto en línea ↗<span class="sr-only"> (catálogo en línea)</span></a>
+          </div>
+        </div>
       </article>
 
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <p class="pretitle">04. ¿Qué sigue?</p>
-    <h2 class="title">Hablemos</h2>
-    <p class="desc">
-      Actualmente estoy abierto a nuevas oportunidades y colaboraciones.
-      Ya sea que tengas una pregunta o simplemente quieras saludar,
-      ¡intentaré responder lo antes posible!
-    </p>
-    <a href="mailto:gomezmena200@gmail.com" class="cta spin-border">Escríbeme</a>
+  <!-- CONTACTO -->
+  <section id="contact" class="contact" aria-labelledby="contact-title">
+    <div class="reveal">
+      <p class="pretitle">04. ¿Qué sigue?</p>
+      <h2 id="contact-title">Hablemos</h2>
+      <p class="desc">
+        Actualmente estoy abierto a nuevas oportunidades y colaboraciones.
+        Ya sea que tengas una pregunta, una vacante o simplemente quieras saludar,
+        ¡intentaré responder lo antes posible!
+      </p>
+      <div class="contact-actions">
+        
+        <a href="mailto:gomezmena200@gmail.com" class="cta primary spin-border">Escríbeme</a>    
+        <a href="https://github.com/RicardoGomez19" class="cta spin-border" target="_blank" rel="noopener me">GitHub ↗</a>
+      </div>
+    </div>
   </section>
 
 </div>
+</main>
 
 <footer>
-  <p>Diseñado y construido por Ricardo Gomez — <a href="#" target="_blank" rel="noopener">GitHub</a></p>
+  <p>Diseñado y construido por Ricardo Gomez</p>
+  <p>© <span id="year">2026</span> · <a href="https://github.com/RicardoGomez19" target="_blank" rel="noopener me">GitHub</a></p>
 </footer>
 
 <script>
-  // ===== Efecto de tecleo en el nombre (solo la primera vez que carga) =====
-  const nameEl = document.getElementById('typedName');
-  const fullName = 'Ricardo Gomez';
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  if (prefersReducedMotion) {
-    nameEl.textContent = fullName;
-  } else {
-    let charIndex = 0;
-    function typeNextChar(){
-      nameEl.textContent = fullName.slice(0, charIndex);
-      charIndex++;
-      if (charIndex <= fullName.length) {
-        setTimeout(typeNextChar, 85);
-      }
+  // ===== Efecto de tecleo (solo visual; el nombre ya está en el HTML para SEO) =====
+  (function(){
+    const nameEl = document.getElementById('typedName');
+    const fullName = 'Ricardo Gomez';
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    let i = 0;
+    nameEl.textContent = '';
+    function type(){
+      nameEl.textContent = fullName.slice(0, ++i);
+      if (i < fullName.length) setTimeout(type, 85);
     }
-    window.addEventListener('DOMContentLoaded', () => setTimeout(typeNextChar, 350));
-  }
+    setTimeout(type, 350);
+  })();
+
+  // ===== Año del footer =====
+  document.getElementById('year').textContent = new Date().getFullYear();
 
   // ===== Menú móvil =====
   const menuToggle = document.getElementById('menuToggle');
   const navLinks = document.getElementById('navLinks');
+  const navBackdrop = document.getElementById('navBackdrop');
 
   function closeMenu(){
     navLinks.classList.remove('open');
+    navBackdrop.classList.remove('show');
     menuToggle.setAttribute('aria-expanded', 'false');
-    menuToggle.textContent = '☰';
+    menuToggle.setAttribute('aria-label', 'Abrir menú');
     document.body.classList.remove('no-scroll');
   }
 
-  function openMenu(){
+    function openMenu(){
     navLinks.classList.add('open');
+    navBackdrop.classList.add('show');
     menuToggle.setAttribute('aria-expanded', 'true');
-    menuToggle.textContent = '✕';
+    menuToggle.setAttribute('aria-label', 'Cerrar menú');
     document.body.classList.add('no-scroll');
   }
-
+  
+  navBackdrop.addEventListener('click', closeMenu);
   menuToggle.addEventListener('click', () => {
     navLinks.classList.contains('open') ? closeMenu() : openMenu();
   });
+  navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+  window.matchMedia('(min-width: 851px)').addEventListener('change', e => { if (e.matches) closeMenu(); });
 
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeMenu();
-  });
-
-  // Tabs de experiencia
-  const tabs = document.querySelectorAll('.exp-tabs button');
+  // ===== Tabs de experiencia (con flechas del teclado) =====
+  const tabs = Array.from(document.querySelectorAll('.exp-tabs [role="tab"]'));
   const panels = document.querySelectorAll('.exp-panel');
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
-      panels.forEach(p => p.classList.remove('active'));
-
-      tab.classList.add('active');
-      tab.setAttribute('aria-selected','true');
-      document.querySelector(`.exp-panel[data-panel="${tab.dataset.tab}"]`).classList.add('active');
+  function activateTab(tab){
+    tabs.forEach(t => {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
+      t.tabIndex = -1;
+    });
+    panels.forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    tab.tabIndex = 0;
+    document.querySelector('.exp-panel[data-panel="' + tab.dataset.tab + '"]').classList.add('active');
+  }
+  tabs.forEach((tab, idx) => {
+    tab.addEventListener('click', () => activateTab(tab));
+    tab.addEventListener('keydown', e => {
+      const move = { ArrowDown:1, ArrowRight:1, ArrowUp:-1, ArrowLeft:-1 }[e.key];
+      if (!move) return;
+      e.preventDefault();
+      const next = tabs[(idx + move + tabs.length) % tabs.length];
+      next.focus();
+      activateTab(next);
     });
   });
+
+  // ===== Aparición suave al hacer scroll =====
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting){ en.target.classList.add('visible'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('visible'));
+  }
+
+  // ===== Resalta en el menú la sección visible =====
+  const navAnchors = Array.from(navLinks.querySelectorAll('a[href^="#"]'));
+  const sectionMap = new Map();
+  navAnchors.forEach(a => {
+    const sec = document.querySelector(a.getAttribute('href'));
+    if (sec) sectionMap.set(sec, a);
+  });
+  if ('IntersectionObserver' in window) {
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (!en.isIntersecting) return;
+        navAnchors.forEach(a => { a.classList.remove('active'); a.removeAttribute('aria-current'); });
+        const a = sectionMap.get(en.target);
+        if (a){ a.classList.add('active'); a.setAttribute('aria-current', 'true'); }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sectionMap.forEach((_, sec) => spy.observe(sec));
+  }
+
+  // Zoom automático en celulares cuando la tarjeta está en el centro de la pantalla
+  if (window.matchMedia('(hover: none)').matches && 'IntersectionObserver' in window) {
+    const cardObs = new IntersectionObserver((entries) => {
+      entries.forEach(en => en.target.classList.toggle('in-view', en.isIntersecting));
+    }, { rootMargin: '-35% 0px -35% 0px' });
+    document.querySelectorAll('.project-card').forEach(c => cardObs.observe(c));
+  }
 </script>
 
 </body>
